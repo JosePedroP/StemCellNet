@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+  		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+  		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">4hdnetdb!</property>
+  		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/stemcelldb</property>
+  		<property name="hibernate.connection.username">root</property>
+  		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  		<property name="hibernate.search.autoregister_listeners">false</property>
+  		<property name="hibernate.current_session_context_class">thread</property>
+  		<property name="hibernate.c3p0.acquire_increment">2</property>
+  		<property name="hibernate.c3p0.idle_test_period">3000</property>
+  		<property name="hibernate.c3p0.timeout">300</property>
+  		<property name="hibernate.c3p0.max_size">20</property>
+  		<property name="hibernate.c3p0.min_size">5</property>
+  		<property name="hibernate.c3p0.max_statement">0</property>
+  		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+  		<property name="hibernate.c3p0.validate">true</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">4hdnetdb!</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/stemcelldb2</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <mapping resource="databaseAccess/Method.hbm.xml" />
+        <mapping resource="databaseAccess/Metname.hbm.xml" />
+        <mapping resource="databaseAccess/Proteinsalias.hbm.xml" />
+        <mapping resource="databaseAccess/Expression.hbm.xml" />
+        <mapping resource="databaseAccess/Proteins.hbm.xml" />
+        <mapping resource="databaseAccess/ProteinDrug.hbm.xml" />
+        <mapping resource="databaseAccess/Interaction.hbm.xml" />
+        <mapping resource="databaseAccess/Pubmedref.hbm.xml" />
+        <mapping resource="databaseAccess/InteractionSpecies.hbm.xml" />
+        <mapping resource="databaseAccess/Proteinsource.hbm.xml" />
+        <mapping resource="databaseAccess/ProtToPath.hbm.xml" />
+        <mapping resource="databaseAccess/Pathway.hbm.xml" />
+        <mapping resource="databaseAccess/InteractionConfscore.hbm.xml" />
+        <mapping resource="databaseAccess/Goannotation.hbm.xml" />
+        <mapping resource="databaseAccess/Screen.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

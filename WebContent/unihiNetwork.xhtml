@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Network</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/networkC.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/borderStyle.css" rel="stylesheet" type="text/css"/>
+	<script src="unihiNetwork.js" type="text/javascript"/>
+    <script type="text/javascript" src="js/min/json2.min.js"/>
+    <script type="text/javascript" src="js/min/AC_OETags.min.js"/>
+    <script type="text/javascript" src="js/min/cytoscapeweb.min.js"/>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head"/>
+</h:head>
+<h:body onload="startup()">
+	<f:view>
+	<h:form id="form">
+		<h:inputHidden value="#{unihiNetwork.proteinsIds}" id="hiddenProteinsId"/>
+		<h:inputHidden value="#{unihiNetwork.graphBasicData}" id="hiddenData"/>
+		<h:inputHidden value="#{unihiNetwork.extraData}" id="hiddenExtraData"/>
+		<h:inputHidden value="#{unihiNetwork.fileData}" id="fileData"/>
+		<h:inputHidden value="#{unihiNetwork.uploadData}" id="uploadData"/>
+		<p:commandButton id="update1" value="update1" update="form:hiddenData" oncomplete="getGraph()" style="display:none"/>
+		<h:commandButton id="giveMeAPDF" value="pdf" action="#{unihiNetwork.getPDF}" style="display:none"/>
+		<h:commandButton id="giveMeAPNG" value="png" action="#{unihiNetwork.getPNG}" style="display:none"/>
+		<h:commandButton id="giveMeATXT" value="txt" action="#{unihiNetwork.getText}" style="display:none"/>
+		<p:commandButton id="Mm" value="Mm" update=":form:hiddenExtraData" onstart="setEdgeDataHs()" oncomplete="removeEdges()" action="#{unihiNetwork.checkForSpecies}" style="display:none"/>
+		<p:commandButton id="Hs" value="Hs" update=":form:hiddenExtraData" onstart="setEdgeDataMm()" oncomplete="removeEdges()" action="#{unihiNetwork.checkForSpecies}" style="display:none"/>
+		<p:commandButton id="sizer" value="testSizer" update=":form:hiddenExtraData" onstart="setNodeData()" oncomplete="sizeBypass()" action="#{unihiNetwork.checkForGO}" style="display:none"/>
+		<p:commandButton id="test2" value="testPvalue" update=":form:hiddenExtraData" onstart="setNodeData()" oncomplete="handelp()" action="#{unihiNetwork.getPvalues}" style="display:none"/>
+		<div id="network">
+			<div id="cytoscapeweb"> 
+			</div>
+			<div id="tools">
+				<fieldset>
+					<legend style="color:blue;font-weight:bold;">Gene sets</legend>
+					<h:selectBooleanCheckbox id="a1" value="#{unihiNetwork.a1}"/> Hs ESC Oct4 Targets Boyer
+					<br/>
+					<h:selectBooleanCheckbox id="a2" value="#{unihiNetwork.a2}"/> Hs ESC Nanog Targets Boyer
+					<br/>
+					<h:selectBooleanCheckbox id="a3" value="#{unihiNetwork.a3}"/> Hs ESC Sox2 targets Boyer
+					<br/>
+					<h:selectBooleanCheckbox id="a4" value="#{unihiNetwork.a4}"/> Hs ESC Consensus Assou
+					<br/>
+					<h:selectBooleanCheckbox id="a5" value="#{unihiNetwork.a5}"/> Hs SC Palmer
+					<br/>
+					<h:selectBooleanCheckbox id="a6" value="#{unihiNetwork.a6}"/> Hs ESC NOS Targets Boyer
+					<br/>
+					<h:selectBooleanCheckbox id="a7" value="#{unihiNetwork.a7}"/> Mm ESC Ivanova
+					<br/>
+					<h:selectBooleanCheckbox id="a8" value="#{unihiNetwork.a8}"/> Mm NSC Ivanova
+					<br/>
+					<h:selectBooleanCheckbox id="a9" value="#{unihiNetwork.a9}"/> Mm HSC Ivanova
+					<br/>
+					<h:selectBooleanCheckbox id="a10" value="#{unihiNetwork.a10}"/> Mm ESC Ramalho
+					<br/>
+					<h:selectBooleanCheckbox id="a11" value="#{unihiNetwork.a11}"/> Mm NSC Ramalho
+					<br/>
+					<h:selectBooleanCheckbox id="a12" value="#{unihiNetwork.a12}"/> Mm HSC Ramalho
+					<br/>
+					<h:selectBooleanCheckbox id="a13" value="#{unihiNetwork.a13}"/> Mm ESC Fortunel
+					<br/>
+					<h:selectBooleanCheckbox id="a14" value="#{unihiNetwork.a14}"/> Mm NSC Fortunel
+					<br/>
+					<h:selectBooleanCheckbox id="a15" value="#{unihiNetwork.a15}"/> Mm RPC Fortunel
+					<br/>
+					<h:selectBooleanCheckbox id="a16" value="#{unihiNetwork.a16}"/> Mm ESC Gasper
+					<br/>
+					<h:selectBooleanCheckbox id="a17" value="#{unihiNetwork.a17}"/> Hs ESC Chia
+					<br/>
+					<h:selectBooleanCheckbox id="a18" value="#{unihiNetwork.a18}"/> Mm ESC Ding
+					<br/>
+					<h:selectBooleanCheckbox id="a19" value="#{unihiNetwork.a19}"/> Mm ESC Hu
+					<br/>
+					<h:selectBooleanCheckbox id="a20" value="#{unihiNetwork.a20}"/> Mm ESC Wang
+					<br/>
+					<br/>
+					<input type="button" value="Map gene sets" onclick="protect1()"/>
+				</fieldset>
+				<fieldset>
+					<legend style="color:blue;font-weight:bold;">Gene Expression Data</legend>
+					<p:fileUpload fileUploadListener="#{unihiNetwork.handleFileUpload}" label="Upload" fileLimit="1" multiple="false" auto="true" update=":form:uploadData" oncomplete="afterUpload()"/>
+					<select id="drop" style="display:none">
+					</select>
+					<select id="drop2" style="display:none">
+						<option value="foldchange">Fold Change</option>
+						<option value="pvalue">p-value</option>
+					</select>
+					<br/>
+					<input id="cutoff" type="text" style="display:none"/>
+					<br/>
+					<input type="button" value="Map Nodes" id="mapb" style="display:none" onclick="paintByGSandEntrez()"/>
+					<input type="button" value="Filter Nodes" id="mapf" style="display:none" onclick="paintAndCutByGSandEntrez()"/>
+				</fieldset>
+				<fieldset>
+					<legend style="color:blue;font-weight:bold;">Filter by species</legend>
+					<input type="button" value="Remove non human" onclick="protect2()"/>
+					<input type="button" value="Remove non mouse" onclick="protect3()"/>
+				</fieldset>
+				<fieldset>
+					<legend style="color:blue;font-weight:bold;">Download Network</legend>
+					<input type="button" value="Save as PNG" onclick="savePng()"/>
+					<br/>
+					<input type="button" value="Save as PDF" onclick="savePdf()"/>
+					<br/>
+					<input type="button" value="Save as text" onclick="saveTxt()"/>
+				</fieldset>
+				<fieldset>
+					<legend style="color:blue;font-weight:bold;">P-values</legend>
+					<input type="button" value="Calculate p-values" onclick="protect4()"/>
+					<div id="pvals" style="display:none">
+						Hs ESC Oct4 Targets Boyer <b><p id="p1"></p></b>
+						Hs ESC Nanog Targets Boyer <b><p id="p2"></p></b>
+						Hs ESC Sox2 targets Boyer <b><p id="p3"></p></b>
+						Hs ESC Consensus Assou <b><p id="p4"></p></b>
+						Hs SC Palmer <b><p id="p5"></p></b>
+						Hs ESC NOS Targets Boyer <b><p id="p6"></p></b>
+						Mm ESC Ivanova <b><p id="p7"></p></b>
+						Mm NSC Ivanova <b><p id="p8"></p></b>
+						Mm HSC Ivanova <b><p id="p9"></p></b>
+						Mm ESC Ramalho <b><p id="p10"></p></b>
+						Mm NSC Ramalho <b><p id="p11"></p></b>
+						Mm HSC Ramalho <b><p id="p12"></p></b>
+						Mm ESC Fortunel <b><p id="p13"></p></b>
+						Mm NSC Fortunel <b><p id="p14"></p></b>
+						Mm RPC Fortunel <b><p id="p15"></p></b>
+						Mm ESC Gasper <b><p id="p16"></p></b>
+						Hs ESC Chia <b><p id="p17"></p></b>
+						Mm ESC Ding <b><p id="p18"></p></b>
+						Mm ESC Hu <b><p id="p19"></p></b>
+						Mm ESC Wang <b><p id="p20"></p></b>
+					</div>
+				</fieldset>
+				<input type="button" value="Recalculate Layout" onclick="reLayout()"/>
+				<br/>
+				<input type="button" value="Reset" onclick="restNetwork()"/>
+			</div>
+		</div>
+	</h:form>
+	</f:view>
+</h:body>
+</html>

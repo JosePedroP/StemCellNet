@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+/* Mendatory css element properties */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+ caption, tbody, tfoot, thead, p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+	}
+body {
+	line-height: 1.3;
+	color:#454545; 
+	background: white;
+	font-family:"Trebuchet MS", Tahoma, Arial, Verdana;  font-weight:300;font-size:14px;text-align:justify
+	
+	}
+ol, ul {
+	list-style: none;
+	}
+/* tables still need 'cellspacing="0"' in the markup */
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	}
+blockquote, q {
+	quotes: "" "";
+	}
+/* Mendatory ends  */
+
+#wrapper{margin:auto; width:100%}
+#container{margin:10px;overflow:auto;}
+#leftcol{float:left;width:32%;margin:0px 5px 0px 10px; border-right:1px solid #CCCCCC;}
+#rightcol{float:left;margin:23px 20px 5px 20px;width:62%;}
+#rightcolothr{float:left;margin:23px 10px 5px 20px; border-left:1px solid #CCCCCC;width:80%;margin:2px 10px 5px 10px;}
+#leftcolothr{float:left;margin:23px 10px 5px 10px; }
+#topAdminText{ text-indent:15px;border-bottom:1px solid silver; margin:5px 150px 5px 10px;padding:7px 0px}
+ .text a{ color:#006666;font-size:16px; font-weight:bold; text-decoration:none}
+ .text a:hover{ color:#006666;font-size:16px; font-weight:bold;text-decoration:none}
+#leftCurvebox{margin:auto;}
+.topRight {	background:url(../images/images/box_02.png) top right no-repeat;margin:0;padding:0;}
+.topleft {	background:url(../images/images/box_01.png)top left no-repeat;	margin:0;padding:0;}
+.BottomRight {	background:url(../images/images/box_04.png) bottom right no-repeat;	margin:0;	padding:0;}
+.BottomLeft {	background:url(../images/images/box_03.png) bottom left no-repeat;	margin:0;	padding:0;}
+.inhalt {	margin:0;	padding:0.9em 1em 1.5em 2.4em;}
+.inhalt p {	margin:0;	padding:0;}
+h2{color:#FFFFFF;font-size:14px;font-weight:bold;margin:0px;text-align:left;}
+.topLeftTxt{color:#4080ae; font-size:13px; font-weight:bold; border-bottom:2px solid #4d4f50;padding:9px 2px;margin:0px 20px 0px 10px}
+.checkboxTxt{font-size:12px;margin:5px 5px 5px 0px;}
+#innerbox{margin:15px 25px 8px 10px; border:1px solid #7992b4; background:#e3ecf8;padding:5px ; min-height:90px}
+p.ProvidePath{font-size:12px;padding:5px 5px 5px 20px; color:#59595a; font-weight:bold}
+.btnupload{width:71px; height:27px; color:#FFFFFF; font-size:12px; font-weight:bold; background:url(../images/upload.png) no-repeat; border:0px; line-height:27px;padding-bottom:5px}
+.grayboldTxt{font-size:14px;color:#2c6692; font-weight:bold;padding:5px 10px}
+.grayboldTxtsml{font-size:14px;color:#2c6692; font-weight:bold;padding:5px 0px}
+.grayboldTxtnp{font-size:14px;color:#2c6692; font-weight:bold;padding:5px 0px}
+#boxes{ margin:2px;padding:5px; font-size:12px;color:#000;}
+.topRightTxt{color:#4080ae; font-size:13px; font-weight:bold; border-bottom:2px solid #4d4f50;padding:9px 20px;}
+#bodyCenter{margin:10px 10px}
+#bodyCenter ul{ margin:5px;padding:5px}
+#bodyCenter ul li{ margin:2px;padding:3px; list-style-image:url(../images/ticket_arrow.png);text-align:justify; line-height:1.3}
+#bodyCenter ul li ul{ color:#2c6692}
+#bodyCenter ul li ul li{ color:#2c6692; list-style-type:none; list-style:square;text-align:justify;list-style-image:url(../images/arw_blu.png);}
+#bodyCenter ul li ul li ul li{ color:#2c6692; list-style-type:none; list-style:square;text-align:justify;list-style-image:url(../images/arw_thin.png);}
+.upbtn{margin:5px 5px 3px 3px ; }
+#news ul li{ margin:2px;padding:3px; list-style-image:url(../images/newsicon.png);text-align:justify; line-height:1.3; list-style-position:outside}
+#homeboxes ul li{ margin:5px;padding:3px; list-style-image:url(../images/arw_blu.png);text-align:justify; line-height:1.3; color:#2c6692 }
+.more{color:#2c6692;font-size:10px; font-style:italic; padding-left:25px}
+.frame{padding:7px; border:2px dotted silver; -moz-border-radius: 10px 10px;border-radius: 10px 10px / 15px 25px; margin:5px }
+#banner{background:url(../images/bgbl.png) bottom left repeat-x ; padding:2px 5px 15PX 2PX;}
+.listDiv{float:left; margin:2px 0px 2px 250px;}
+.fltLeft{float:left}
+.fltRight{float:right}
+.ovrflAuto{overflow:auto}
+.uploadTxt{font-size:12px;color:#2c6692; font-weight:bold;padding:5px 10px;float:left}
+#logininner{background:url(../images/login.png) no-repeat; width:519px; height:259px; margin:auto}
+#logininnerpad{padding:65px 20px 40px 120px}
+.user{margin:15px 0px 5px 0px}
+.pass{margin:5px 0px 10px 0px}	
+.signin{margin:5px 0px 10px 160px}
+/* Styles for the entire LavaLamp menu */
+	/*body {font-family:arial; font-size:11px;}
+	
+	 remove the list style */
+	#nav {
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}	
+	
+		/* make the LI display inline */
+		/* it's position relative so that position absolute */
+		/* can be used in submenu */
+		#nav li {
+			float:left; 
+			display:block; 
+			width:80px;
+			background:#6390c7; 
+			position:relative;
+			z-index:500; 
+			margin:0 1px;
+			
+		}
+		
+		/* this is the parent menu */
+		#nav li a {
+			display:block; 
+			padding:0px 5px 0 5px; 
+			font-weight:700;  
+			height:17px; 
+			line-height:17px;
+			text-decoration:none; 
+			color:#fff; 
+			text-align:center; 
+			color:#fff;
+		}
+
+		#nav li a:hover {
+			color:#fff;
+		}
+	
+		/* you can make a different style for default selected value */
+		#nav a.selected {
+			color:/*#548dd4;*/#fff;
+		}
+	
+		/* submenu, it's hidden by default */
+		#nav ul {
+			position:absolute; 
+			left:0; 
+			display:none; 
+			margin:0 0 0 -1px; 
+			padding:0; 
+			list-style:none;
+		}
+		
+		#nav ul li {
+			width:100px; 
+			float:left; 
+			border-top:1px solid #fff;
+		}
+		
+		/* display block will make the link fill the whole area of LI */
+		#nav ul a {
+			display:block;  
+			height:15px;
+			padding: 2px 5px; 
+			color:#fff;
+			background:#6c96c9; 
+		}
+		
+		#nav ul a:hover {
+			text-decoration:underline;	
+		}
+
+		/* fix ie6 small issue */
+		/* we should always avoid using hack like this */
+		/* should put it into separate file : ) */
+		*html #nav ul {
+			margin:0 0 0 -2px;
+		}
+
+	.clear{ clear:both}

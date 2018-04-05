@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/Jul/2015 12:11:12 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="databaseAccess.InteractionSpecies" table="interaction_species" catalog="stemcelldb2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="interaction" class="databaseAccess.Interaction" fetch="select">
+            <column name="interaction_id" not-null="true" />
+        </many-to-one>
+        <property name="species" type="string">
+            <column name="species" length="3" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

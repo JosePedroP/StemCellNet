@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/Jul/2015 12:11:12 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="databaseAccess.Proteins" table="proteins" catalog="stemcelldb2">
+        <id name="prid" type="java.lang.Integer">
+            <column name="prid" />
+            <generator class="identity" />
+        </id>
+        <property name="entrezgeneid" type="string">
+            <column name="entrezgeneid" length="45" />
+        </property>
+        <property name="genesymbol" type="string">
+            <column name="genesymbol" length="500" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <set name="protToPaths" table="protToPath" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.ProtToPath" />
+        </set>
+        <set name="proteinDrugs" table="protein_drug" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.ProteinDrug" />
+        </set>
+        <set name="goannotations" table="goannotation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Goannotation" />
+        </set>
+        <set name="proteinsaliases" table="proteinsalias" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Proteinsalias" />
+        </set>
+        <set name="proteinsources" table="proteinsource" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Proteinsource" />
+        </set>
+        <set name="interactionsForPridB" table="interaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="prid_b" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Interaction" />
+        </set>
+        <set name="screens" table="screen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Screen" />
+        </set>
+        <set name="interactionsForPridA" table="interaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="prid_a" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Interaction" />
+        </set>
+        <set name="expressions" table="expression" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="proteins_prid" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Expression" />
+        </set>
+    </class>
+</hibernate-mapping>

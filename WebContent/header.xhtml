@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+  	<title>Header</title>
+	<link rel="stylesheet" type="text/css" href="./css/dropdown.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/test1.css"/>
+</h:head>
+<h:body>
+	<br/>
+	<p align="center">
+		<a href="stemCellNet.jsf">
+			<img src="./images/StemCellNetLogo.png"  alt="unihi-logo" border="0"/>
+		</a>
+	</p>
+	<br/>
+	<p:toolbar>
+		<p:toolbarGroup align="left" style="padding-left:30px">
+			<p:commandButton type="button" value="Home" onclick="window.location=document.getElementById('clickMeToo').href;"/>
+        	<p:commandButton type="button" value="Help" onclick="window.location=document.getElementById('clickMeToo2').href;"/>
+        	<p:commandButton type="button" value="Statistics" onclick="window.location=document.getElementById('clickMeToo3').href;"/>
+		
+		
+		</p:toolbarGroup>
+	</p:toolbar>
+	
+	<p:outputPanel id="linkater" style="display:none">
+		<a href="stemCellNet.jsf" id="clickMeToo">stemCellNet.jsf</a>
+		<a href="help.jsf" id="clickMeToo2">help.jsf</a>
+		<a href="statistics.jsf" id="clickMeToo3">statistics.jsf</a>
+	</p:outputPanel>
+	
+	
+</h:body></html>

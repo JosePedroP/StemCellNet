@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>UNIHI</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<script src="unihiSerach.js" type="text/javascript"/>
+	
+</h:head>
+<h:body>
+
+	<f:view>
+	<h:form>
+		<ui:include src="header.xhtml"/>
+		<!-- include goes here -->
+		<div class="topRightTxt" style="font-size:1.4em;margin-left:50px;margin-right:50px">Unified Human Interactome</div>
+		<br/>
+		<div class="rich-panel"  style="margin-left:80px;margin-right:80px">
+		<p:panel style ="background-color:#F2F2F2;font-size:0.8em;">
+			<strong style="color:red">UniHI search:</strong> 
+				Users can enter gene or protein identifiers from different organisms 
+				to obtain physical and regulatory interaction partners in the 
+				human interactome. Results are displayed by the UniHI 
+				visualisation tool which offers  multiple options to filter interactions (e.g. based on source of 
+				interactions or amount of evidence). Drug targets in the retrieved network can be easily highlighted and 
+				analysed. Expression data from the UniHI database or uploaded by the user can be employed to derive 
+				tissue-, process- or disease-specific networks. Tools for examining the functional relevance of molecular
+				networks are also provided to the user.
+		</p:panel>
+		</div>
+		<br/>
+		
+		<table  align="center" style=";margin-left:130px;margin-right:80px">
+			<tbody>
+			<tr>
+				<td style="text-align: right" width="40%" align="right">
+					<strong style="color:red; font-size:0.9em">Choose organism for entered identifiers:</strong>
+				</td>
+				<td width="1%" align="center">
+				</td>		
+				<td align="left"  width="60%" >
+					<h:selectOneMenu id="selectMenu" value="#{unihiSearch.organism}">
+						<f:selectItems value="#{unihiSearch.organisms}"/>
+                    </h:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: justify; padding-top: 10px;font-size:0.8em;" valign="top" align="right" > 
+					Enter your gene or protein identifiers (up to max. 50) separated by any delimiter: comma, space, tab or newline. Search is also possible using wild card "*" for gene symbols.
+					<!-- add example links -->
+				</td>
+				<td style="padding-top: 10px;" valign="top" align="center"></td>
+				<td>
+ 					<h:inputTextarea id="searchText" rows="8" cols="39" value="#{unihiSearch.searchData}" style="font-family:Trebuchet MS;font-size:0.8em;background-color:#E4E5E6">
+					</h:inputTextarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+					<h:commandButton  value="" styleClass="s_button" action="#{unihiSearch.searchAction}"/>
+               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 					<h:commandButton value="" type="reset" styleClass="r_button"/>
+ 				</td>
+			</tr>
+			</tbody>
+		</table>
+	<br/><br/>
+	
+	<div style="margin-left:90px;margin-right:90px;font-size:0.95em">
+		<strong style="color:red">UniHI needs you!</strong>	Please let <strong><a href="mailto:rkkalathur@ualg.pt">us</a></strong>  know if you encounter error messages or if you have suggestions for  additional UniHI features to help your network analysis.
+	</div>
+	<br />
+	<div style="margin-left:50px;margin-right:50px">
+		<hr noshade="noshade" size="3"/>
+	</div>
+	<br/><br/>
+	
+	</h:form>
+	</f:view>
+
+</h:body></html>

@@ -1,0 +1,114 @@
+body{	height: 100%;width: 100%;background: #fff;font: 12px "Trebuchet MS", Verdana, sans-serif;	}
+	a{	text-decoration: none; outline: none; color:#000; }
+	p{ text-align:justify; line-height:120%; }
+
+#colleft   { width:245px; margin-top:0px; float:right; overflow:hidden; background:#abcfd6; height:400px;}
+#colleft h3 { height:30px; background-color:#218399; color:#fff; padding:10px 0 0 20px; margin-bottom: 10px;}
+#colleft ul { margin-bottom:20px;}
+#colleft ul li { border-bottom: 1px solid #666; margin:0 0 0 5px; padding:0 0 2px 5px;}
+
+#colleft #hidePanel	{ height:0px; padding:4px 0 0 10px;}
+#colleft #hidePanel a	{ color:#2b9fb9;}
+#colleft #hidePanel a:hover	{ color:#ddec75;}
+#colleft, #showPanel	{ color:#fff; }
+
+#showPanel {	position:inherit; z-index:2; left:0; float:right; padding-top:40px; display:none; width:0px; height:100px; cursor:pointer;}
+#showPanel span{	display:block; font-size:24px; height:30px; margin-top:20px; padding:10px 0 10px 10px; width:20px; background: #333;}
+
+#colright { padding-top:10px; color:#1c1c1c; margin-right:200px; text-align:justify; }
+#wrapper {
+	
+	height: 300px;  
+	text-align :left;
+	overflow:auto; 
+	}
+	
+.accordionButton {	
+	width: 200px;
+	float: left;
+	background: #218399;
+	border-bottom: 1px solid #FFFFFF;
+	cursor: pointer;
+	padding-left:5px;
+	color:#000;
+	}
+ 
+.accordionContent {	
+	width: 200px;
+	float: left;
+	background: #abcfd6;
+	display: none;
+	padding-left:5px; 
+	color:#000;
+	}
+	
+.selectedName	{
+	color:#FFFF00;
+	font-weight:bold;
+	font-size:16px;
+	}
+
+.style4 {
+	color: #000000;
+	font-weight: bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	padding:3px;
+	line-height: 18px;
+	font-size: 12px;
+	}
+	
+.style6 {
+	color: #FFFFFF; 
+	font-weight: bold; 
+	font-size: 13px;
+	background-color: #548dd4;
+	padding : 5px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	border-right:#FFFFFF 1px dotted;
+	}
+	
+.style_ultimatum {
+	color: #FFFFFF;
+	font-family:Trebuchet MS; 
+	font-weight: bold;
+	background-color: #548dd4;
+	padding-left: 5px;
+	}
+	
+.style7 {
+	font-family: Arial, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 11px;
+	padding:3px;
+	}
+	
+.style8 {
+	font-family: Arial, "Times New Roman", Times, serif
+	}
+	
+.style9 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	font-size: 12px;
+	line-height: 18px;
+	padding:2px;
+	}
+	
+.textfont {
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+ 	font-size: 10.5px;
+ 	color: #333333;
+ 	}
+ 		
+.button {
+    border: none;
+    background: url('includes/images/up1.png') no-repeat top left;
+    padding: 2px 8px;
+    text-align: left;
+	}
+	
+.button:hover {
+    border: none;
+    background: url('includes/images/down1.png') no-repeat top left;
+    padding: 2px 8px;
+	}

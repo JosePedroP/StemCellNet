@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/unihi_Interactions.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+	<f:view>
+		<f:metadata>
+  			<f:viewParam name="prid" value="#{proteinsDetails.prid2}"/>
+		</f:metadata>
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+		
+			<tr>
+				<td colspan="2" class="style6">#{proteinsDetails.prot.genesymbol}</td>
+				<td colspan="4" class="style6">#{proteinsDetails.prot.description}</td>
+			</tr>
+			<tr>
+				<td colspan="6" style="padding-top:5px;">
+					<span class="style4"> Synonyms: </span><span class='pdtabsubhedcont'> #{proteinsDetails.prot.synonyms} </span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6" style="padding-top:5px;">
+					<h:outputLink value="http://www.ncbi.nlm.nih.gov/gene/?term=#{proteinsDetails.prot.entrezgeneid}" rendered ="#{proteinsDetails.prot.entrezgeneid == -1 ? 'false': 'true'}"> 
+						<span class='style4'>EntGID: </span>#{proteinsDetails.prot.entrezgeneid}
+					</h:outputLink>
+					<h:outputLink value="http://www.uniprot.org/uniprot/#{proteinsDetails.prot.uniprotid}" rendered ="#{proteinsDetails.prot.uniprotid == '-1' ? 'false': 'true'}"> 
+						<span class='style4'>UID: </span>#{proteinsDetails.prot.uniprotid}
+					</h:outputLink>
+					<h:outputLink value="http://www.ncbi.nlm.nih.gov/nuccore/#{proteinsDetails.prot.geneinfoid}" rendered ="#{proteinsDetails.prot.geneinfoid == -1 ? 'false': 'true'}"> 
+						<span class='style4'>NGID: </span>#{proteinsDetails.prot.geneinfoid}
+					</h:outputLink>
+					<h:outputLink value="http://www.ensembl.org/Homo_sapiens/geneview?gene=#{proteinsDetails.prot.ensembleid}" rendered ="#{proteinsDetails.prot.ensembleid == '-1' ? 'false': 'true'}"> 
+						<span class='style4'>EnsGID: </span>#{proteinsDetails.prot.ensembleid}
+					</h:outputLink>
+					<h:outputLink value="http://www.ncbi.nlm.nih.gov/omim/#{proteinsDetails.prot.omimid}" rendered ="#{proteinsDetails.prot.omimid == -1 ? 'false': 'true'}"> 
+						<span class='style4'>OMIM: </span>#{proteinsDetails.prot.omimid}
+					</h:outputLink>
+					<h:outputLink value="http://www.ncbi.nlm.nih.gov/nuccore/#{proteinsDetails.prot.refseqid}" rendered ="#{proteinsDetails.prot.refseqid == '-1' ? 'false': 'true'}"> 
+						<span class='style4'>RefSeq ID: </span>#{proteinsDetails.prot.refseqid}
+					</h:outputLink>
+					<h:outputLink value="http://www.genecards.org/cgi-bin/carddisp.pl?gene=#{proteinsDetails.prot.genesymbol}"> 
+						<span class='style4'>GeneCards: </span>#{proteinsDetails.prot.genesymbol}
+					</h:outputLink>
+					<h:outputLink value="http://genemania.org/link?o=9606&#38;g=#{proteinsDetails.prot.entrezgeneid}"> 
+						<span class='style4'>GeneMania: </span>#{proteinsDetails.prot.genesymbol}
+					</h:outputLink>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6" style="padding-top:5px;">
+					<span class='style4'>Stemness gene sets: </span>#{proteinsDetails.prot.sourcesT}
+				</td>
+			</tr>
+		</table>
+		<ui:repeat var="drug" value="#{proteinsDetails.prot.drugs}">
+			<span class='style4'>DBID:</span> #{drug[0]} <span class='style4'>Drug Name:</span> #{drug[1]} <span class='style4'>Mechanism Of Action:</span> #{drug[2]}
+			<br/>
+		</ui:repeat>
+		
+		
+		
+		
+	</f:view>
+</h:body>
+</html>

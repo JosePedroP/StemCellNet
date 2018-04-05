@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/Jul/2015 12:11:12 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="databaseAccess.Interaction" table="interaction" catalog="stemcelldb2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="proteinsByPridB" class="databaseAccess.Proteins" fetch="select">
+            <column name="prid_b" not-null="true" />
+        </many-to-one>
+        <many-to-one name="proteinsByPridA" class="databaseAccess.Proteins" fetch="select">
+            <column name="prid_a" not-null="true" />
+        </many-to-one>
+        <property name="regulatory" type="string">
+            <column name="regulatory" length="1" />
+        </property>
+        <property name="oldIntdisid" type="java.lang.Integer">
+            <column name="old_intdisid" />
+        </property>
+        <set name="methods" table="method" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="interaction_id" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Method" />
+        </set>
+        <set name="pubmedrefs" table="pubmedref" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="interaction_id" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.Pubmedref" />
+        </set>
+        <set name="interactionSpecieses" table="interaction_species" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="interaction_id" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.InteractionSpecies" />
+        </set>
+        <set name="interactionConfscores" table="interaction_confscore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="interaction_id" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.InteractionConfscore" />
+        </set>
+    </class>
+</hibernate-mapping>

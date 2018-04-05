@@ -1,0 +1,87 @@
+.chdi_home1_search1{
+	font-family:Trebuchet MS;
+	font-variant: normal;
+	text-transform: none;
+	line-height:18px;
+	color: #000;
+	text-decoration: none;
+	text-align: justify;
+	width: 850px;
+	margin: 0 auto;
+	align:center;
+	
+}
+.chdi_home1_td1{
+	padding-left: 20px;
+	width: 50%;
+}
+.chdi_home1_td2{
+	width: 50%;
+	align: right;
+	valign: top;
+	padding-right: 60px;
+}
+.chdi_home1_table1{
+	width: 90%;
+	border: 0;
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height:16px;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.test_search{
+font-family:Trebuchet MS;
+	font-size: 20px;
+	font-weight: bolder;
+	font-variant: normal;
+	text-transform: none;
+	line-height:16px;
+	color: #000;
+	text-decoration: none;
+	text-align: justify;
+	width: 850px;
+	margin: 0 auto;
+}
+.rsButton {
+	background-color:#11808A
+    border-width:2px;
+    border-style:outset;   
+    style :background-color;     
+    skin:panelBorderColor;   
+}
+.text_sample {
+	font-family:Trebuchet MS;
+	font-size: 12px;
+	font-weight: ;
+	font-variant: normal;
+	text-transform: none;
+	line-height:18px;
+	color: #000;
+	text-decoration: none;
+	text-align: justify;
+	width: 850px;
+	margin: 0 auto;
+}
+.s_button {
+    border: none;
+    background: url(../images/submit.jpg) no-repeat top left;
+    padding: 2px 8px;
+    color:#fff;
+    width:62px;
+    height:23px;
+}
+.r_button {
+    border: none;
+    background: url(../images/reset.jpg) no-repeat top left;
+    padding: 2px 8px;
+     color:#fff;
+    width:62px;
+    height:23px;
+}

@@ -1,0 +1,17 @@
+#network {
+	margin: auto;
+	width: 100%;
+}
+
+#cytoscapeweb {
+	float: left;
+	background: #ABCFD6;
+	width: 75%;
+	height: 600px;
+}
+
+#tools {
+	float: right;
+	width: 25%;
+	height: 750px;
+}

@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+h1.title {
+  display: table;
+  margin: auto;
+  padding: 5px 8px;
+  letter-spacing: -.025em;
+  font-size:4em;
+}
+h2.subtitle {
+  display: table;
+  margin: auto;
+  padding: 5px 8px;
+  letter-spacing: -.025em;
+  font-size:2.5em;
+}
+div.upper{
+	background-image:url('sysbiolablogo.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	background-size:180px 80px;
+}
+td.vert {
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.fileupload-buttonbar{
+   background: white !important;
+   border: 0;
+}
+.fileupload-content{
+   background: white !important;
+   border: 0;
+}

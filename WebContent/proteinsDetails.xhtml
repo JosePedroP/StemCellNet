@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>UNIHI</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+	<f:view>
+		<f:metadata>
+  			<f:viewParam name="prid" value="#{proteinsDetails.prid}"/>
+		</f:metadata>
+		<p align="center">
+			<font style="font-weight:bold">
+				<u>Information on Queried Protein #{proteinsDetails.prot.genesymbol}</u>
+			</font>
+		</p>
+		<br/>
+		<table align="center" border="1" width="100%" cellpadding="4" bgcolor="" cellspacing="1">
+			<tr>
+				<td width="30%" align="center" bgcolor="cccccc">
+					<font size="3" style="font-weight: bold">Gene Symbol</font>
+				</td>
+				<td width="70%" align="left">
+					#{proteinsDetails.prot.genesymbol}
+				</td>
+			</tr>
+			<tr>
+				<td width="30%" align="center" bgcolor="cccccc">
+					<font size="3" style="font-weight: bold">Description</font>
+				</td>
+				<td width="70%" align="left">
+					#{proteinsDetails.prot.description}
+				</td>
+			</tr>
+			<p:outputPanel rendered ="#{proteinsDetails.prot.entrezgeneid == -1 ? 'false': 'true'}">
+				<tr>
+					<td width="30%" align="center" bgcolor="cccccc">
+						<font size="3" style="font-weight: bold">Entrez Gene ID</font>
+					</td>
+					<td width="70%" align="left">
+						#{proteinsDetails.prot.entrezgeneid}
+					</td>
+				</tr>
+			</p:outputPanel>
+			<p:outputPanel rendered ="#{proteinsDetails.prot.uniprotid == -1 ? 'false': 'true'}">
+				<tr>
+					<td width="30%" align="center" bgcolor="cccccc">
+						<font size="3" style="font-weight: bold">Uniprot ID</font>
+					</td>
+					<td width="70%" align="left">
+						#{proteinsDetails.prot.uniprotid}
+					</td>
+				</tr>
+			</p:outputPanel>
+			<p:outputPanel rendered ="#{proteinsDetails.prot.unigeneid == -1 ? 'false': 'true'}">
+				<tr>
+					<td width="30%" align="center" bgcolor="cccccc">
+						<font size="3" style="font-weight: bold">Unigene ID</font>
+					</td>
+					<td width="70%" align="left">
+						#{proteinsDetails.prot.unigeneid}
+					</td>
+				</tr>
+			</p:outputPanel>
+			<p:outputPanel rendered ="#{proteinsDetails.prot.ensembleid == -1 ? 'false': 'true'}">
+				<tr>
+					<td width="30%" align="center" bgcolor="cccccc">
+						<font size="3" style="font-weight: bold">Ensemble ID</font>
+					</td>
+					<td width="70%" align="left">
+						#{proteinsDetails.prot.ensembleid}
+					</td>
+				</tr>
+			</p:outputPanel>
+			<p:outputPanel rendered ="#{proteinsDetails.prot.refseqid == -1 ? 'false': 'true'}">
+				<tr>
+					<td width="30%" align="center" bgcolor="cccccc">
+						<font size="3" style="font-weight: bold">Ref Seq ID </font>
+					</td>
+					<td width="70%" align="left">
+						#{proteinsDetails.prot.refseqid}
+					</td>
+				</tr>
+			</p:outputPanel>
+			<tr>
+				<td width="30%" align="center" bgcolor="cccccc">
+					<font size="3" style="font-weight: bold">Synonyms</font>
+				</td>
+				<td width="70%" align="left">
+					#{proteinsDetails.prot.synonyms}
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<p align="center">
+			<font style="font-weight: bold;">
+				<u>GO Environment</u>
+			</font>
+		</p>
+		<br/>
+		<table width="100%" border="1">
+			<tr bgcolor="cccccc">
+				<th align="center" width="20%" bgcolor="cccccc">
+					Category
+				</th>
+				<th align="center" width="60%" bgcolor="cccccc">
+					Description
+				</th>
+				<th align="center" width="20%" bgcolor="cccccc">
+					GOID
+				</th>
+			</tr>
+			<ui:repeat var="go" value="#{proteinsDetails.prot.goanotations}">
+				<tr>
+					<th align="center" width="20%">
+						#{go[0]}
+					</th>
+					<th align="center" width="60%">
+						#{go[1]}
+					</th>
+					<th align="center" width="20%">
+						<h:outputLink value="http://amigo1.geneontology.org/cgi-bin/amigo/term_details?term=#{go[2]}" target="_new">
+							<h:outputText value="#{go[2]}" />
+						</h:outputLink>
+					</th>
+				</tr>
+			</ui:repeat>
+		</table>
+	</f:view>
+</h:body>
+</html>

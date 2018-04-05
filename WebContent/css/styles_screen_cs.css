@@ -1,0 +1,304 @@
+
+
+
+/* CSS Document - TeachForAmerica.org - Screen Styles */
+a:link {
+	color: blue;
+	text-decoration: underline;
+	font-size:0.9em;
+}
+a:visited {
+	color: blue;
+	text-decoration: underline;
+	font-size:0.9em;
+}
+a:hover {
+	color: orange;
+	text-decoration: underline;
+	font-size:0.9em;
+}
+a:active {
+	color: red;
+	font-size:0.9em;
+}
+.logintxt {
+	color:#2f2f2f;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:left;
+	padding-top:5px;
+}
+.logintxts {
+	color:#2f2f2f;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:left;
+	padding-top:5px;
+}
+#pageTitle {
+	float: left;
+	width: 540px;
+	padding: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	color:#5e97c0;
+}
+#pageTitle h1 {
+	font-size: 14px;
+	color: #000000;
+	padding: 0px;
+	margin-top: 0px
+}
+#footerContainer {
+	clear: both;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-left: 12px;
+}
+#pageFooter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000;
+	margin-bottom:10px;
+}
+#pageFooter a:link, #pageFooter a:active, #pageFooter a:visited {
+	color: #000;
+	text-decoration: none
+}
+#pageFooter a:hover {
+	color: #d81c12;
+	text-decoration: underline;
+}
+.errMsg {
+	color: #ff0000;
+}
+.errMsgBold {
+	color: #ff0000;
+	font-weight: bold;
+}
+/* -- Begin Document Styles -- */
+html, body {
+	background-color: #ffffff;
+	margin: 0px;
+	padding: 0px
+}
+/* -- Begin Header Styles -- */
+#headerContainer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-image: url('nav_bkg.gif');
+	background-position: 0px bottom;
+	background-repeat: repeat-x
+}
+#header {
+	width: 760px;
+	font-size: 10px;
+	color: #666666;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom:auto;
+	margin-top:auto;
+	padding-bottom:inherit;
+}
+/* -- Begin Primary Navigation Styles -- */
+/*#nav {
+	clear: both }*/
+	
+
+/* -- Begin Container Styles -- */
+#container {
+	width: 870px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px auto
+}
+/* -- Begin Body Styles -- */
+#body {
+	margin-bottom: 20px;
+}
+
+#spacer {
+	clear: left;
+	height: 15px
+}
+/* -- Begin Content Styles -- */
+#statsTable {
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	border:solid 1px #d1e6ee;
+	line-height: 15px;
+	color: #666666
+}
+#statsTable th, #rightTable th {
+	background-image: url('http://localhost/template/img/table_title_bkg.gif');
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #537289;
+	text-align: left;
+	padding-bottom: 6px
+}
+#statsTable td, #rightTable td {
+	padding-left: 8px;
+}
+.success {
+	color:#CC3300;
+}
+#statsTable .altCol, #rightTable .altCol {
+	background-color: #eaeaea
+}
+/*background-color: #f6f6f6 }*/
+#statsTable ul, #statsTable ol {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666
+}
+#timelineTable {
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	BORDER-RIGHT: thick 0.5px #44b4dd 1px solid;
+	BORDER-TOP: thick 0.5px #44b4dd 1px solid;
+	BORDER-LEFT: thick 0.5px #44b4dd 1px solid;
+	WIDTH: 100%;
+	BORDER-BOTTOM: thick 0.5px #44b4dd 1px solid;
+}
+#timelineTable th {
+	background-color: #93a200;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: left;
+	padding-bottom: 6px
+}
+#timelineTable th.centerContent {
+	text-align: center
+}
+#timelineTable .highlight {
+	background-color: #dae0e4
+}
+#timelineTable td {
+	padding-left: 8px
+}
+#timelineTable .altCol {
+	background-color: #f6f6f6
+}
+#popContainer {
+	font-family: Verdana, Arial, Helvetica, sans-serif
+}
+#popContainer h1 {
+	border-top: 1px solid #d7d7d7;
+	border-bottom: 1px solid #d7d7d7;
+	font-size: 15px;
+	color: #e47e00;
+	padding: 10px 0px;
+	margin-right: 5px;
+	margin-left: 5px
+}
+#popContainer h2 {
+	font-size: 12px;
+	color: #666666;
+	line-height: 17px;
+	padding: 0px 10px
+}
+#popContainer p {
+	font-size: 11px;
+	color: #666666;
+	line-height: 18px;
+	padding: 0px 10px
+}
+#popContainer ul, #popContainer ol {
+	font-size: 11px;
+	color: #666666;
+	line-height: 18px;
+	margin-top: 0px
+}
+#popContainer a:link, #popContainer a:active, #popContainer a:visited {
+	color: #93a200;
+	font-weight: bold;
+	text-decoration: none
+}
+#popContainer a:hover {
+	font-weight: bold;
+	text-decoration: underline
+}
+#popContainer input, #popContainer select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666
+}
+/* -- Begin Footer Styles -- */
+#footerContainer {
+	clear: both;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-left: 12px;
+}
+#footer {
+	width: 490px;
+	font-size: 10px;
+	color: #00274c;
+}
+#footer a:link, #footer a:active, #footer a:visited {
+	color: #00274c;
+	text-decoration: none
+}
+#footer a:hover {
+	color: #00274c;
+	text-decoration: underline;
+}
+.legal {
+	font-size: 10px;
+	color: #a9b5b9;
+	line-height: 12px
+}
+/*CSS menu style*/
+td img {
+/* Another Mozilla/Netscape bug with making sure our images display correctly */
+	
+}
+#nav {
+	/* The master div to make sure that our popup menus get aligned correctly.  Be careful when playing with this one. */
+	clear: both;
+	position:relative;/*margin:0px;
+	width:1024px;
+	height:768px;
+	text-align:left;*/
+}
+.comp {
+	color:#ff7100;
+}
+.textfont {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5px;
+	color: #333333;
+}
+.blackbold {
+	background-color:#e8eefa;
+	font-weight:bold;
+	color:#000000;
+}
+.input-rounded-button {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #640505;
+	padding:3 6px 3 6px;
+	height: 20px;
+	display:inline-block;
+	text-decoration:none;
+	background:#9d2727;
+	text-align:center;
+	color:#FFFFFF;
+	cursor:pointer;
+	font:11px sans-serif;
+	font-weight:bold;
+}
+.input-rounded-button:hover {
+	text-decoration:none;
+	color:#fff;
+	cursor:pointer;
+	border:1px solid #FF2B06;
+}
+

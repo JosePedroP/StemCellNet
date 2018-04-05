@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/Jul/2015 12:11:12 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="databaseAccess.Pathway" table="pathway" catalog="stemcelldb2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="pathName" type="string">
+            <column name="pathName" length="100" not-null="true" />
+        </property>
+        <property name="pathDes" type="string">
+            <column name="pathDes" length="200" />
+        </property>
+        <property name="oldId" type="java.lang.Integer">
+            <column name="oldId" />
+        </property>
+        <set name="protToPaths" table="protToPath" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pathway_id" not-null="true" />
+            </key>
+            <one-to-many class="databaseAccess.ProtToPath" />
+        </set>
+    </class>
+</hibernate-mapping>

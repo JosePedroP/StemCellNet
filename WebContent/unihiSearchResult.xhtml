@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/chdi_style.css" rel="stylesheet" type="text/css"/>
+	<script src="unihiSerachResult.js" type="text/javascript"/>
+	
+</h:head>
+<h:body onload="startup()">
+	<f:view>
+	<h:form id="form">
+		<ui:include src="header.xhtml"/>
+		<h:inputHidden value="#{uni.proteins}" id="hiddenProteins"/>
+		<h:inputHidden value="#{uni.proteinsName}" id="hiddenProteinsName"/>
+		<p:outputPanel id="out1">
+		<h:inputHidden value="#{uni.proteinsIds}" id="hiddenProteinsIds"/>
+			<table>
+				<ui:repeat var="prot" value="#{uni.protTable.pdto}">
+					<tr>
+						<ui:fragment>
+							<td width='5%'>
+								<input type="checkbox" id="chk_#{prot.prid}" checked='true' onclick="updatePorteinList()"/>
+							</td>
+							<td width='20%' class='searchresultheader'>
+								Gene Symbol : #{prot.genesymbol}
+							</td>
+							<td width='20%' class='searchresultheader'>
+								Description: #{prot.description}
+							</td>
+							<td width='20%' class='searchresultheader'>
+								<h:outputLink value="proteinsDetails.jsf" target="new">
+	    						<h:outputText value="Info" />
+	    						<f:param name="prid" value="#{prot.prid}" />
+								</h:outputLink>
+							</td>
+						</ui:fragment>	
+					</tr>
+					<tr>
+						<td colspan="6" style="padding-top:5px;">
+							<span class='pdtabsubhed'> Synonyms: </span><span class='pdtabsubhedcont'> #{prot.synonyms} </span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6">
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/gene/?term=#{prot.entrezgeneid}" target="new" rendered ="#{prot.entrezgeneid == -1 ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>EntGID: </span>#{prot.entrezgeneid}
+							</h:outputLink>
+							<h:outputLink value="http://www.uniprot.org/uniprot/#{prot.uniprotid}" target="new" rendered ="#{prot.uniprotid == '-1' ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>UID: </span>#{prot.uniprotid}
+							</h:outputLink>
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/nuccore/#{prot.geneinfoid}" target="new" rendered ="#{prot.geneinfoid == -1 ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>NGID: </span>#{prot.geneinfoid}
+							</h:outputLink>
+							<h:outputLink value="http://www.ensembl.org/Homo_sapiens/geneview?gene=#{prot.ensembleid}" target="new" rendered ="#{prot.ensembleid == '-1' ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>EnsGID: </span>#{prot.ensembleid}
+							</h:outputLink>
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/omim/#{prot.omimid}" target="new" rendered ="#{prot.omimid == -1 ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>OMIM: </span>#{prot.omimid}
+							</h:outputLink>
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/nuccore/#{prot.refseqid}" target="new" rendered ="#{prot.refseqid == '-1' ? 'false': 'true'}"> 
+								<span class='pdtabsubhed'>RefSeq ID: </span>#{prot.refseqid}
+							</h:outputLink>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6">
+							<span class='pdtabsubhed'>KEGG Pathways: </span>
+							<ui:repeat var="path" value="#{prot.paths}">
+								<h:outputLink value="http://www.genome.jp/kegg-bin/show_pathway?#{path.pathName}+#{prot.entrezgeneid}" target="new" rendered ="#{prot.refseqid == '-1' ? 'false': 'true'}">
+									#{path.pathDes}
+								</h:outputLink>
+							</ui:repeat>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6">
+							<h:outputLink value="http://141.80.164.19/neuroprot/index.php?gene=#{prot.genesymbol}" rendered ="#{prot.mdc == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/mdc.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.nature.com/nature/journal/v437/n7062/suppinfo/nature04209.html" rendered ="#{prot.vidal == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/vidal.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.nature.com/nature/journal/v437/n7062/suppinfo/nature04209.html" rendered ="#{prot.vidal_y2h == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/vidal-y2h.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://hprd.org/summary?hprd_id=#{prot.hprdid}&amp;isoform_id=#{prot.hprdid}_1&amp;isoform_name=Isoform_1" rendered ="#{prot.hprd_complex == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/hprd.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://hprd.org/summary?hprd_id=#{prot.hprdid}&amp;isoform_id=#{prot.hprdid}_1&amp;isoform_name=Isoform_1" rendered ="#{prot.hprd_binary == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/hprd-binary.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://dip.doe-mbi.ucla.edu/dip/Browse.cgi?PK=#{prot.dipid}" rendered ="#{prot.dip == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/dip.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://reactome.org/cgi-bin/search2?DB=gk_current&amp;CATEGORY=everything&amp;OPERATOR=ALL&amp;QUERY=#{prot.entrezgeneid}&amp;SPECIES=48887&amp;SUBMIT=Go%21" rendered ="#{prot.reactome == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/reactome.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/pubmed/15892868" rendered ="#{prot.ramani == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/ramani.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.ncbi.nlm.nih.gov/pubmed/15345047" rendered ="#{prot.fraser == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/fraser.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://mint.bio.uniroma2.it" rendered ="#{prot.homomit == '2'? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/homomint.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://mint.bio.uniroma2.it/HomoMINT/search/search.do?queryType=protein&amp;ac=#{prot.uniprotid}" rendered ="#{prot.homomit == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/homomint.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://ophid.utoronto.ca" rendered ="#{prot.ophid == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/ophid.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.thebiogrid.org/SearchResults/summary/#{prot.biogridid}" rendered ="#{prot.biogrid == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/biogrid.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.ebi.ac.uk/intact/binary-search/faces/search.xhtml?query=#{prot.uniprotid}" rendered ="#{prot.intact == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/intact.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.bind.ca/Action?idsearch=gi:#{prot.geneinfoid}" rendered ="#{prot.bind == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/bind.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://www.gene-regulation.com/pub/databases.html" rendered ="#{prot.transfac == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/transfac.gif"/>
+							</h:outputLink>
+							<h:outputLink value="http://mirtarbase.mbc.nctu.edu.tw" rendered ="#{prot.mirtarbase == '1' ? 'true': 'false'}" target="_new">
+								<h:graphicImage value="./images/mirtarbase2.png"/>
+							</h:outputLink>
+						</td>
+					</tr>
+				</ui:repeat>
+			</table>
+		</p:outputPanel>
+		
+		
+		<input type="button" value="Draw Network" onclick="clickLinky()"/>
+		<a href="" id="linky" target="new" style="display:none"/>
+		
+		<p:commandButton id="update1" value="update1" update="form:out1" action="#{uni.getTable}" oncomplete="getids()" style="display:none"/>
+		</h:form>
+	</f:view>
+</h:body></html>

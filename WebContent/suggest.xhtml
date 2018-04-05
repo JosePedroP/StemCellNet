@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/suggest.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+
+	<f:view>
+	<h:form id="form">
+		<ui:include src="header.xhtml"/>
+		<!-- include goes here -->
+		
+		<div style="margin-left:50px;margin-right:50px">
+			<hr noshade="noshade" size="3"/>
+		</div>
+	
+	
+		<div id="container">
+			<p>
+				<h:outputLabel value="Name (optional)"/>
+				<br/>
+				<h:inputText id="s1" value="#{suggestion.from}"/>
+			</p>
+			<p>
+				<h:outputLabel value="Email (optional)" />
+				<br/>
+				<h:inputText id="s2" value="#{suggestion.email}"/>
+			</p>
+			<p>
+				<h:outputLabel value="Suggestion"/>
+				<br/>
+				<h:inputTextarea id="s3" rows="8" cols="39" value="#{suggestion.data}"/>
+			</p>
+			<br/>
+			<p:commandButton value="Submit" action="#{suggestion.send}"/>
+			<br/>
+		</div>
+		
+		<p class="back"><a href="stemCellNet.jsf">Back to StemCellNet</a></p>
+		<div style="margin-left:50px;margin-right:50px">
+			<hr noshade="noshade" size="3"/>
+		</div>
+	</h:form>
+	</f:view>
+
+</h:body></html>

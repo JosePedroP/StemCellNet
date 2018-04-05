@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+
+	<f:view>
+	<h:form id="form">
+		<ui:include src="header.xhtml"/>
+		<!-- include goes here -->
+		
+	<div style="margin-left:50px;margin-right:50px">
+		<hr noshade="noshade" size="3"/>
+	</div>
+	
+	<h1 class="subtitle">Data included in StemCellNet</h1>
+	<br/>
+	
+	<p class="text">1) <strong>Physical protein interactions</strong> in murine embryonic stem cells (mES-PPI). 
+	These were detected using affinity purification and mass spectrometry for selected proteins as 
+	targets. The interactions were extracted directly from the published material.
+	Interactions from following seven studies are currently included:</p>
+	
+	<br/>
+	
+	<table class="data">
+		<tr class="data">
+			<td class="data"><b>Target proteins</b></td>
+			<td class="data"><b>Number of interaction partners</b></td>
+			<td class="data"><b>Publication</b></td>
+			<td class="data"><b>PubMed ID</b></td>
+			<td class="data"><b>Logo in StemCellNet</b></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Pou5f1, Sall4, Tcfcp2l1, Dax1, Esrrb</td>
+			<td class="data">267</td>
+			<td class="data">van den Berg et al. Cell Stem Cell. 2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20362541">20362541</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Pou5f1</td>
+			<td class="data">198</td>
+			<td class="data">Ding et al. Cell Res. 2012</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22083510">22083510</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog</td>
+			<td class="data">132</td>
+			<td class="data">Nitzsche et al. PloS One. 2011</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/21589869">21589869</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Pou5f1</td>
+			<td class="data">93</td>
+			<td class="data">Pardo et al. Cell Stem Cell. 2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20362542">20362542</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Myc, Max, Dmap1, Tip60, Gcn5, E2F4</td>
+			<td class="data">84</td>
+			<td class="data">Kim et al. Cell 2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20946988">20946988</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Sox2</td>
+			<td class="data">71</td>
+			<td class="data">Gao et al. J Biol Chem. 2012</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22334693">22334693</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Nac1, Zfp281, Dax1, Pou5f1</td>
+			<td class="data">66</td>
+			<td class="data">Wang et al. Nature 2006</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/17093407">17093407</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1</td>
+			<td class="data">24</td>
+			<td class="data">Liang J et al. Nat Cell Biol 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18454139">18454139</a></td>
+			<td class="data"><h:graphicImage value="./images/mesppi.png"/></td>
+		</tr>
+	</table>
+	<br/>
+	
+	<p class="text">2) <strong>Transcriptional regulatory interactions</strong> detected by chromatin immunoprecipitation combined with 
+	microarray and sequencing technologies (ChIP-chip, ChIP-PET, ChIP-Seq). Altogether, StemCellNet has over 140000 
+	distinct regulatory interactions detected from murine embryonic stem cells in 18 large-scale studies.</p>
+	
+	<br/>
+	<table class="data">
+		<tr class="data">
+			<td class="data"><b>Transcription factor</b></td>
+			<td class="data"><b>Number of target genes</b></td>
+			<td class="data"><b>Publication</b></td>
+			<td class="data"><b>PubMed ID</b></td>
+			<td class="data"><b>Logo in StemCellNet</b></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1, Sox2, Smad1, Stat3, Klf4, Myc, Mycn, Esrrb, Tcfcp2l1, Zfx, E2f1, Suz12, Ctcf</td>
+			<td class="data">29476</td>
+			<td class="data">Chen et al.,Cell 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18555785">18555785</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Gcn5, Dmap1, E2f4, Myc, Max, Tip60</td>
+			<td class="data">17422</td>
+			<td class="data">Kim et al ,Cell 2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20946988">20946988</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1, Sox2, Suz12, Tcf3</td>
+			<td class="data">13867</td>
+			<td class="data">Marson et al.,Cell 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18692474">18692474</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Klf4, Myc, Nacc1, Nanog, Nr0b1, Pou5f1, Sox2, Zfp281, Zfp42</td>
+			<td class="data">12407</td>
+			<td class="data">Kim et al.,Cell 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18358816">18358816</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1, Tcf3</td>
+			<td class="data">6239</td>
+			<td class="data">Cole et al., Genes Dev.,2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18347094">18347094</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Klf4, Sox2, Myc</td>
+			<td class="data">6168</td>
+			<td class="data">Liu et al., Cell Res. 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19030024">19030024</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1</td>
+			<td class="data">5070</td>
+			<td class="data">Loh et al.,Nat. Genet. 2006</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16518401">16518401</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Eed, Phc1, Rnf2, Suz12</td>
+			<td class="data">4243</td>
+			<td class="data">Boyer et al., Nature 2006</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16625203">16625203</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Tcf3</td>
+			<td class="data">1445</td>
+			<td class="data">Tam et al.,Stem Cells,2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18467660">18467660</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Tbx3</td>
+			<td class="data">1701</td>
+			<td class="data">Han et al.,Nature,2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20139965">20139965</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Nanog, Pou5f1</td>
+			<td class="data">2478</td>
+			<td class="data">Mathur et al.,Genome Biol.,2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18700969">18700969</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		
+		<tr class="data">
+			<td class="data">Stat3, Myc</td>
+			<td class="data">2399</td>
+			<td class="data">Kidder et al. PLoS One 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19079543">19079543</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Suz12</td>
+			<td class="data">1893</td>
+			<td class="data">Lee et al. Cell. 2006</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16630818">16630818</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Ring1B, Suz12, Ezh2</td>
+			<td class="data">5452</td>
+			<td class="data">Ku et al. PLoS Genet. 2008</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/18974828">18974828</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Smad2, Smad3</td>
+			<td class="data">9762</td>
+			<td class="data">Brown et al. Stem Cells. 2011</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/21630377">21630377</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Smad1, Smad4, Smad5</td>
+			<td class="data">3642</td>
+			<td class="data">Fei, Teng, et al. Genome research. 2010</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19926752">19926752</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">E2F4, NANOG, SOX2, POU5F1</td>
+			<td class="data">4057</td>
+			<td class="data">Boyer, Laurie A., et al. Cell. 2005</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16153702">16153702</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">SMAD2, SMAD3, SMAD4</td>
+			<td class="data">15599</td>
+			<td class="data">Kim, Si Wan, et al. Developmental biology. 2011</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/21741376">21741376</a></td>
+			<td class="data"><h:graphicImage value="./images/meschip.png"/></td>
+		</tr>
+		
+	</table>
+	
+	
+	<br/>
+	<p class="text">3) <strong>Generic interactions</strong>: To obtain a comprehensive interaction dataset, which also enables the detection of stemness 
+	factors in networks, that were not covered by the stem cell-focused studies above, we additionally imported 
+	molecular interactions integrated in the Unified Human Interactome database. They originate from several 
+	primary resources and comprise both physical and regulatory interactions.</p>
+	<br/>
+	
+	<table class="data">
+		<tr class="data">
+			<td class="data"><b>Resource</b></td>
+			<td class="data"><b>Number of interactions</b></td>
+			<td class="data"><b>Type of interaction</b></td>
+			<td class="data"><b>Method</b></td>
+			<td class="data"><b>Reference</b></td>
+			<td class="data"><b>Logo in StemCellNet</b></td>
+		</tr>
+		<tr class="data">
+			<td class="data">MDC-Y2H</td>
+			<td class="data">3340</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Y2H screen</td>
+			<td class="data">Stelzl et al. 2005 Cell</td>
+			<td class="data"><h:graphicImage value="./images/mdc.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">CCSB</td>
+			<td class="data">3741</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Y2H screen + Import from other databases</td>
+			<td class="data">Rual et al. 2005 Nature</td>
+			<td class="data"><h:graphicImage value="./images/vidal.gif"/><br/><h:graphicImage value="./images/vidal-y2h.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">HPRD</td>
+			<td class="data">65227</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Prasad et al. 2009 NAR</td>
+			<td class="data"><h:graphicImage value="./images/hprd-binary.gif"/><br/><h:graphicImage value="./images/hprd.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">BioGRID</td>
+			<td class="data">124035</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Chatr-Aryamontri, A et al. 2013 NAR</td>
+			<td class="data"><h:graphicImage value="./images/biogrid.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">BIND</td>
+			<td class="data">19352</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Isserlin, R et al. Database, 2011</td>
+			<td class="data"><h:graphicImage value="./images/bind.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">DIP</td>
+			<td class="data">2925</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Salwínski et al. NAR 2004</td>
+			<td class="data"><h:graphicImage value="./images/dip.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">IntAct</td>
+			<td class="data">37629</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Kerrien et al. NAR 2012</td>
+			<td class="data"><h:graphicImage value="./images/intact.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Reactome</td>
+			<td class="data">108867</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Pathway curation</td>
+			<td class="data">Croft et al. NAR 2011</td>
+			<td class="data"><h:graphicImage value="./images/reactome.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">COCIT</td>
+			<td class="data">6580</td>
+			<td class="data">Functional association</td>
+			<td class="data">Computational prediction</td>
+			<td class="data">Ramani et al. 2004 Genome Biology</td>
+			<td class="data"><h:graphicImage value="./images/ramani.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">ORTHO</td>
+			<td class="data">62863</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Computational prediction</td>
+			<td class="data">Lehner et al. 2004 Genome Biology</td>
+			<td class="data"><h:graphicImage value="./images/fraser.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">HOMOMINT</td>
+			<td class="data">21863</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Computational prediction + Literature curation</td>
+			<td class="data">Persico et al. 2005 BMC Bioinformatics</td>
+			<td class="data"><h:graphicImage value="./images/homomint.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">OPHID</td>
+			<td class="data">81677</td>
+			<td class="data">Physical protein interaction</td>
+			<td class="data">Computational prediction</td>
+			<td class="data">Brown et al. 2005 Bioinformatics</td>
+			<td class="data"><h:graphicImage value="./images/ophid.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">TRANSFAC (public version)</td>
+			<td class="data">1554</td>
+			<td class="data">Regulatory transcriptional interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Matys et al. 2006 NAR</td>
+			<td class="data"><h:graphicImage value="./images/transfac.gif"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">miRTarBase</td>
+			<td class="data">3565</td>
+			<td class="data">Regulatory transcriptional interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Hsu SD et al. 2011 NAR</td>
+			<td class="data"><h:graphicImage value="./images/mirtarbase2.png"/></td>
+		</tr>
+		<tr class="data">
+			<td class="data">HTRIdb</td>
+			<td class="data">2263</td>
+			<td class="data">Regulatory transcriptional interaction</td>
+			<td class="data">Literature curation</td>
+			<td class="data">Bovolenta et al. 2012 BMC Genomics </td>
+			<td class="data"><h:graphicImage value="./images/htridb1.png"/></td>
+		</tr>
+	</table>
+	
+	<br/>
+	<h1 class="subtitle" id="stemnessgenesets">Stemness gene sets</h1>
+	<br/>
+	
+	
+	<p class="text">The following gene sets associated  with stemness in independent and published studies are currently included in StemCellNet:</p>
+	<br/>
+	
+	
+	<table class="data">
+		<tr class="data">
+			<td class="data"><b>Stemness gene set</b></td>
+			<td class="data"><b>Organism</b></td>
+			<td class="data"><b>Stem Cell Type</b></td>
+			<td class="data"><b>Type of Source</b></td>
+			<td class="data"><b>Number of genes</b></td>
+			<td class="data"><b>Pubmed ID</b></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Hs ESC Nanog Targets Boyer</td>
+			<td class="data"><i>Homo sapiens </i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">TF Binding</td>
+			<td class="data">988</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16153702">16153702</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Hs ESC Oct4 Targets Boyer</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">TF Binding</td>
+			<td class="data">290</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16153702">16153702</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Hs ESC Sox2 Targets Boyer</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">TF Binding</td>
+			<td class="data">734</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16153702">16153702</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Hs ESC NOS Targets Boyer</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">TF Binding</td>
+			<td class="data">179</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/16153702">16153702</a></td>
+		</tr>
+		<tr class="data"></tr>
+		<tr class="data">
+			<td class="data">Hs ESC Consensus Assou</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">379</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/17204602">17204602</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Hs SC Palmer</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">Diverse</td>
+			<td class="data">Expression</td>
+			<td class="data">187</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22909066">22909066</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Ivanova</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">967</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228721">12228721</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm NSC Ivanova</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">NS cells</td>
+			<td class="data">Expression</td>
+			<td class="data">840</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228721">12228721</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm HSC Ivanova</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">HS cells</td>
+			<td class="data">Expression</td>
+			<td class="data">712</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228721">12228721</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Ramalho</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">1141</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228720">12228720</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm NSC Ramalho</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">NS Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">1538</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228720">12228720</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm HSC Ramalho</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">HS Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">1231</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/12228720">12228720</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Fortunel</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">1066</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/14563990">14563990</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm NSC Fortunel</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">NS Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">1101</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/14563990">14563990</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Gasper</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">Expression</td>
+			<td class="data">160</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22420508">22420508</a></td>
+		</tr>
+		<tr class="data"></tr>
+		<tr class="data">
+			<td class="data">Hs ESC Chia</td>
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">RNAi</td>
+			<td class="data">518</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20953172">20953172</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Ding</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">RNAi</td>
+			<td class="data">145</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19345177">19345177</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Hu</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">RNAi</td>
+			<td class="data">123</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19339689">19339689</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data">Mm ESC Wang</td>
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">ES Cells</td>
+			<td class="data">RNAi</td>
+			<td class="data">89</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22899353">22899353</a></td>
+		</tr>
+	</table>
+	<br/>
+	<p align="center"><strong>Table Legend:</strong> ES Cells - Embryonic stem cell; NS Cells - Neural stem cells; HS cells - Hematopoietic stem cell</p>
+	
+	<br/>
+	<p class="back"><a href="stemCellNet.jsf">Back to StemCellNet</a></p>
+	</h:form>
+	</f:view>
+
+</h:body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/style1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles_screen_cs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="./css/test1.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+
+	<f:view>
+	<h:form id="form">
+		<ui:include src="header.xhtml"/>
+		<!-- include goes here -->
+		
+	<div style="margin-left:50px;margin-right:50px">
+		<hr noshade="noshade" size="3"/>
+	</div>
+	
+	<h1 class="title">What is StemCellNet ?</h1>
+	<br/>
+	
+	
+	<p class="text"><strong>StemCellNet</strong> is an interactive platform for retrieval and analysis of molecular 
+	networks associated with stem cells and their marker genes. It contains a large number of physical 
+	and regulatory interactions both from human and mouse, which can be queried by the user through the 
+	input of a set of gene or protein identifiers. The web-interface includes various filtering options 
+	for prioritization, and allows the upload of own data for display of differential expression. As a 
+	unique feature of <strong>StemCellNet</strong>, the obtained networks can be rapidly screened for genes 
+	included in various published stemness signatures. This feature can also be applied to dissect 
+	pathogenetic processes, in which stem cell related mechanisms play key roles, such as in 
+	degenerative diseases and oncogenesis.</p>
+	
+	
+	<br/>
+	<h1 class="subtitle">Which data is included in StemCellNet? </h1>
+	<br/>
+	
+	
+	<p class="text">StemCellNet integrates physical and regulatory interactions from various sources. 
+	A complete list of all the interaction data currently included in StemCellNet can be seen <a href="statistics.jsf">here</a>.</p>
+	
+	
+	<br/>
+	<h1 class="title">Tutorial for StemCellNet</h1>
+	<br/>
+	
+	
+	<p class="text">In the following, we describe the main features of <strong>StemCellNet</strong> using as input set <i>CITED1</i>, 
+	a transcriptional co-activator, and the growth arrest and DNA-damage-inducible proteins <i>GADD45A</i> and <i>GADD45G</i>.
+	The set can be obtained as input by pressing the <strong>Example</strong> button.</p>
+	
+	<br/>
+	<h1 class="title" id="sec2">Selecting central nodes</h1>
+	<br/>
+	<p class="text">The first step in using StemCellNet is simply to input of  a list of gene identifiers 
+	(including include gene name, gene symbol, Entrez Gene ID, Uniprot ID and Ensembl ID for human or mouse) 
+	in the search box and pressing the <strong>Search</strong> button. The inputted  identifiers are then matched 
+	against the list of genes/proteins included in StemCellNet. For the matches, the genes symbol, their 
+	description, aliases and various identifiers linked to other databases are given. Furthermore, a set of 
+	buttons is displayed indicating the original source of interactions for the found genes (Figure 1).</p>
+	<br/>
+	<p align="center"><img src="./images/F1.png" width="70%" height="70%"/></p>
+	<p align="center"><strong>Figure 1. List of genes found in StemCellNet.</strong></p>
+	<br/>
+	<p class="text">Once a list of genes is obtained, the next step is to select which ones will serve as 
+	central nodes. The network will be constructed around these central nodes based on the interactions 
+	included in StemCellNet for them. After selecting the central nodes, press <strong>Draw Network</strong>.</p>
+	
+	<br/>
+	<h1 class="title" id="sec3">Analyzing the network</h1>
+	<br/>
+	<p class="text">As shown in Figure 2, the page, which renders the 
+	retrieved interaction network and serves as interface for 
+	network-orientated analyses in StemCellNet, is divided into two 
+	panels: the left one for the graphical display of the network and 
+	the right one listing the available tools. The later one  is further 
+	subdivided based in functionality, which will be described below.</p>
+	
+	<p align="center"><img src="./images/F2.png" width="70%" height="70%"/></p>
+	<p align="center"><strong>Figure 2. StemCellNet network window.</strong> 1- Network display;
+	2- The network panel offers several options for changing the display such as moving sidewards or zooming in or out; 
+	3- Stemness gene set selection boxes; 4- Stemness  enrichment calculation; 5- Expression data analysis; 
+	6- Network filters; 7- Network export.</p>
+	
+	<br/>
+	<p class="text">In the default display, the central nodes are larger and marked in grey whereas 
+	the interacting proteins as shown as yellow nodes. Protein-protein  interactions are represented 
+	as blue edges, while transcriptional regulatory interactions by red ones.</p>
+	<br/>
+	
+	<h1 class="subtitle">Stemness gene sets</h1>
+	<br/>
+	<p class="text">StemCellNet includes currently 20 gene sets, which have 
+	previously been linked to stemness (i.e. to the characteristic feature of stem 
+	cells: the capacity to both self-renew and differentiate into mature cells). 
+	These gene (also referred to as stemness signatures) sets have been derived from three different types of sources: 
+	(i) ChIP-chip experiments detecting activated target genes of the core 
+	transcription factors Nanog, Pou5f1 (Oct4), and Sox2, or 
+	co-activated by all three transcription factors (abbreviated here as NOS targets), (ii) 
+	gene expression studies to identify up-regulated genes  in stem cells 
+	compared to other types of (differentiated) cells and (iii) large-scale functional RNAi screens to 
+	detect genes whose knock-down leads to loss of stem cell markers. A table with an 
+	overview of the included stemness gene sets with references to the published 
+	studies can be seen <h:outputLink value="statistics.jsf#stemnessgenesets">here</h:outputLink>.
+	</p>
+	<br/>
+	<p class="text">To map stemness gene sets onto a network, you can select the relevant gene set by activating 
+	the check box and press the <strong>Map gene sets</strong> button. The size of the nodes is then adjusted 
+	to be proportional to the number of stemness gene sets, in which the corresponding gene appears. 
+	Nodes which represent genes that do not appear in any stemness gene set are displayed as rectangles.</p>
+	<br/>
+	<p class="text">As an alternative to visualization these results can also be downloaded in the format CSV using 
+	the <strong>Download set table</strong> button. Here, a table is outputted with the genes and their occurrence in stemness signatures. 
+	It should be noted that the file will only contain data about nodes which are present in at least one set.</p>
+	<br/>
+	
+	<p align="center"><img src="./images/F3.png" width="40%" height="40%"/></p>
+	<p align="center"><strong>Figure 3. Network after mapping the gene sets.</strong> Nodes corresponding to 
+	genes, such as the key transcription factors POU5F1, NANOG or SOX2, which appear in many stemness gene 
+	sets, are noticeably increased in size</p>
+	<br/>
+	
+	
+	
+	<!--  
+	
+	<p class="text">The <strong>Identify candidates</strong> button serves to highlight nodes which are 
+	not present in any set but are connected with nodes which are. This functionality serves to 
+	<strong>[Matthias could you write something about it ?]</strong>. Nodes highlighted are 
+	converted into octagons and their colour changes to blue. The size of the highlighted nodes is 
+	proportional to the number of sets their neighbours belong to.</p>-->
+	
+	<p class="text">In some cases, it might be interest to identify novel candidates genes associated with 
+	stemness. To assist researchers in this gene prioritization problem StemCellNet has a tool that 
+	evaluates the connectivity within the network and scores potential candidates accordingly. 
+	Currently, four variations of the ‘direct neighbour counting’ approach are available: 
+	unweighted, weighted scoring, weighted by co-expression scoring and weighted by co-expression and 
+	set number scoring. These methods are motivated on the ‘guilt by association’ 
+	principle and assume in our context that the more stemness genes that a candidate gene 
+	is directly connected to, the more likely it is that the candidate itself is associated with stemness.</p>
+	<br/>
+	<p class="text">The <strong>Unweighted connectivity</strong> button calls the unweighted scoring version 
+	of this function in which the score of a candidate is simply the sum of direct interactions with 
+	stemness associated genes. Alternatively by using the <strong>Weighted connectivity</strong>  button each 
+	interaction is weighted by the number how many time the interacting genes occurs in a 
+	stemness signature. Note that for using either option a group of stemness sets must be 
+	mapped first into the network (by pressing the <strong>Map gene sets</strong> sets button).</p>
+	<br/>
+	<p class="text">
+	
+	
+	Two related methods which utilize co-expression between interacting genes are the 
+	(i) <strong>Weighted by co-expression</strong> and (ii) <strong>Weighted by co-expression 
+	and set count</strong>, which can be executed by respective buttons. Both methods are 
+	variants of the unweighted connectivity and weighted connectivity scoring respectively, 
+	as the each interaction is additionally weighted by the correlation coefficient for 
+	co-expression. Basically, the scores are calculated as the sum of (weighted) interactions. 
+	Additionally, each factor representing an interaction between two genes is multiplied by 
+	the correlation coefficient for these two genes. The data set, from which the correlation 
+	coefficients are derived, can be selected by the user in a drop-down menu. 
+	Note that only interactions with positive correlation of expression contribute to 
+	the final score:  When the correlation coefficient is positive the adjustment is 
+	calculated by multiplying the correlation coefficient by 10 and normalizing the results, 
+	so that the decimal is removed. In contrast, when the correlation coefficient is zero 
+	or negative, the terms representing these interactions are multiplied by 0.</p>
+	
+	<br/>
+	<h1 class="subtitle">Significance of enrichment</h1>
+	<br/>
+	
+	<p class="text">Enrichment of genes from the stemness sets in the network can be calculated by pressing the 
+	<strong>Calculate enrichment</strong> button. It is not necessary to map the stemness sets onto the 
+	network before calculating the enrichment. The calculation is based on the Fisher’s exact test. 
+	For each stemness gene set, a p-value is displayed for the significance together with the number of 
+	genes found within the network.</p>
+	
+	<p class="text">It is important to note that the calculation does not take into account nodes, 
+	which were filtered out of the network (using the functionality described below). Also, the 
+	values are not automatically updated, when a filter is applied. In that situation the 
+	function has to be manually recalled.</p>
+	
+	<br/>
+	<h1 class="subtitle">Gene expression</h1>
+	<br/>
+	
+	<p class="text">Gene expression data can be uploaded into StemCellNet as tab delimited table 
+	with the following format:</p>
+	<p class="text">1st column: Entrez Gene ID or Gene Symbol.</p>
+	<p class="text">2nd column: Expression values (such as signal intensities or  fold changes).</p>
+	<p class="text">3rd column: P-value.</p>
+	<p class="text">4rt column: Sample description.</p>
+	<br/>
+	<p class="text">Once the file is uploaded, the nodes can be colored based on a user-defined 
+	cutoff values for either the expression values or the p-value. In the case of expression value, 
+	nodes associated  with a smaller value are colored green, while nodes with a larger 
+	value are colored red. Nodes with no associated values keep their original coloring. For filtering based on 
+	p-values, only nodes with an p-value smaller than the chosen
+	cutoff are highlighted. Here, nodes passing the threshold are colored red if they have positive expression,
+	whereas they appear green for negative expression. This filtering option can be used in the common cases 
+	where the expression values in the file provide differential expression given as logged fold changes.   
+	In either situation yellow nodes can optionally be filtered 
+	out of the network.</p>
+	<br/>
+	<p class="text">It should be noted that files can contain data from several different samples assuming that 
+	each has a unique sample id. This enables the simultaneous uploading of expression data for multiple samples 
+	and thus facilitates the analysis of more complex experiments such as time series.</p>
+	<br/>
+	<p class="text">A exemplary file compatible with the StemCellNet format can be downloaded <a href="example.txt">here</a>. This file provides an excerpt 
+	from a time series experiment, in which mouse embryonic stem cells have undergone differentiation through the hanging droplet method. Note that three time points
+	are included: day 0, day 3 and day 10. Once the file is uploaded, the time point of interest can be used for filtering by choosing it in the drop down menu.</p>
+	<br/>
+	
+	<p align="center"><img src="./images/F4.png" width="70%" height="70%"/></p>
+	<p align="center"><strong>Figure 4. Network with mapped expression data using p-values for day 0 with a cutoff of 0.01.</strong> 
+	A- with no filtering; B- with filtering.</p>
+	<br/>
+	<p class="text">Alternatively expression data that we have already included in StemCellNet, can be used for 
+	analysis. In particular, data from several time series are currently available to choose from. 
+	These data can be mapped onto the network, or used for filtering. The table below gives an 
+	overview of the currently included data sets and their origin. For all datasets, expression values 
+	have been log2 transformed and adjusted, so that mean expression of a gene in a time series is equal to 
+	zero. An exception is given by the proteomics data set, which is normalized to the expression at 
+	the start of the reprogramming process (i.e. day 0). It should be noted that the expression values 
+	contained in the database have no p-values associated.</p>
+	<br/>
+	
+	
+	<table class="data">
+		<tr class="data">
+			<td class="data"><b>Organism</b></td>
+			<td class="data"><b>Experiment</b></td>
+			<td class="data"><b>Time points</b></td>
+			<td class="data"><b>Stem Cell Type</b></td>
+			<td class="data"><b>Number of genes/proteins</b></td>
+			<td class="data"><b>Platform</b></td>
+			<td class="data"><b>Pubmed ID</b></td>
+		</tr>
+		<tr class="data">
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">In vitro differentiation via embryonic bodies using the hanging droplet method</td>
+			<td class="data">8</td>
+			<td class="data">ES Cells</td>
+			<td class="data">20881</td>
+			<td class="data">Affymetrix GeneChip Mouse Genome 430 2.0</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/22420508">22420508</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data"><i>Homo sapiens</i></td>
+			<td class="data">Directed in vitro differentiation of hiPSCs into cardiomyocytes using sequential administration of protein factors</td>
+			<td class="data">6</td>
+			<td class="data">hiPS Cells</td>
+			<td class="data">19889</td>
+			<td class="data">Affymetrix Human Gene 1.0 ST Array [transcript (gene) version]</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/21876760">21876760</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">(i) In vitro differentiation of mESCs into neural ectoderm by specific medium 
+			(ii) In vitro differentiation of mESCs into trophoblasts lineage by down-regulation of Oc4 
+			(iii) In vitro differentiation of mESCs into extra-embryonic endoderm (XEN) by Gata6 overexpression</td>
+			<td class="data">18</td>
+			<td class="data">ES Cells</td>
+			<td class="data">24287</td>
+			<td class="data">NIA Mouse 44K Microarray v3.0 (Whole Genome 60-mer Oligo) [Agilent 015087]</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/19112179">19112179</a></td>
+		</tr>
+		<tr class="data">
+			<td class="data"><i>Mus musculus</i></td>
+			<td class="data">Reprogramming of mouse embryonic fibroblasts into iPSCs</td>
+			<td class="data">5</td>
+			<td class="data">MEF Cells</td>
+			<td class="data">7409</td>
+			<td class="data">LC-MS/MS proteomics</td>
+			<td class="data"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23260666">23260666</a></td>
+		</tr>
+	</table>
+	<br/>
+	<p align="center">Expression data contain in the StemCellNet associated database</p>
+	<br/>
+	
+	
+	<h1 class="subtitle">Filters</h1>
+	<br/>
+	<p class="text">StemCellNet creates networks with both human and mouse interactions. 
+	However if only interactions specific for one of the species are of interest, it is 
+	possible to remove interaction from the other organism though either the 
+	<strong>Remove non human</strong> or <strong>Remove non mouse</strong> buttons.</p>
+	<br/>
+	<p class="text">This option removes foremost edges. In case that a node is connected 
+	only with edges which have been removed, it will also be removed.</p>
+	<br/>
+	<p class="text">Additionally, StemCellNet provides filtering options for removing 
+	either physical or regulatory interactions.</p>
+	<br/>
+	<p class="text">Also it is possible to filter the interactions based in the number 
+	of associated Pubmed ids. In this case a threshold must be set before using the filter. 
+	The filtering removes all interactions which have been associated with less 
+	publications than the chosen threshold. This functionality can help to derive 
+	high-confidence networks.</p>
+	<br/>
+	<p class="text">Co-expression filters are based in the expression data stored in the 
+	associated database (Table 2). This filters can be used to either remove all the 
+	interactions which have a correlation coefficient value less than a chosen threshold 
+	or to map the values into the network, in the last case the width of the edges will 
+	become proportional to the associated correlation coefficient. Regardless of the 
+	option selected this types of filters always remove the edges with no associated 
+	correlation coefficient.</p>
+	<br/>
+	<p class="text">Finally this toolbar also contains a functionality which can alter 
+	the size of the edges based in the number of associated Pubmed ids. While not a filter 
+	this operation can be used to give an idea of the confidence of the network. </p>
+	<br/>
+	<h1 class="subtitle">Download network</h1>
+	<br/>
+	
+	<p class="text">StemCellNet provides options to download the displayed either as 
+	graphics in pdf or  png format or as a list of interactions in a tab delimited file.</p>
+	<p class="text">Note that the tab delimited file will only contain the interactions 
+	for the currently displayed network.</p>
+	<br/>
+	
+	<p class="back"><a href="stemCellNet.jsf">Back to StemCellNet</a></p>
+	</h:form>
+	</f:view>
+
+</h:body></html>

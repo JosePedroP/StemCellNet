@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+h1.title {
+  font-size: 2em;
+  margin-left: 90px;
+  margin-right: 150px;
+  font-weight: bold;
+}
+
+h1.subtitle {
+  font-size: 1.5em;
+  margin-left: 90px;
+  margin-right: 150px;
+  font-weight: bold;
+}
+
+p.text {
+	font-size:1.20em;
+	margin-left: 90px;
+	margin-right: 90px;
+}
+
+
+p.back {
+	font-size:1.50em;
+	margin-left: 90px;
+	margin-right: 90px;
+	text-align: right;
+}
+
+table.data {
+	font-size:1.20em;
+	margin-left: 90px;
+	margin-right: 90px;
+}
+
+table.data, tr.data, td.data {
+	border: 1px solid black;
+}
